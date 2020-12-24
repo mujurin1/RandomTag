@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>RandomTag</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="7.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RandomTag.Core\RandomTag.Core.csproj" />
+    <ProjectReference Include="..\Modules\RandomTag.Modules.ModuleName\RandomTag.Modules.ModuleName.csproj" />
+    <ProjectReference Include="..\Services\RandomTag.Services.Interfaces\RandomTag.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\RandomTag.Services\RandomTag.Services.csproj" />
+  </ItemGroup>
+</Project>

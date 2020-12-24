@@ -1,0 +1,12 @@
+﻿<Window x:Class="RandomTag.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:core="clr-namespace:RandomTag.Core;assembly=RandomTag.Core"
+        Title="{Binding Title.Value}" Height="600" Width="800" >
+    <Grid>
+        <ContentControl Grid.Row="0"
+                        prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+    </Grid>
+</Window>
