@@ -1,20 +1,23 @@
 ﻿using NicoDou.Utils;
 using RandomTag.Services.Interfaces;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace RandomTag.Services
 {
     public class GifService : IGifService
     {
-        private Hidariue _nicoDou;
+        private HidariueSt _nicoDou;
 
         public GifService()
         {
-            this._nicoDou = new Hidariue(666);
+            this._nicoDou = HidariueSt.Get(666);
         }
 
         public BitmapImage GetGif()
-            => _nicoDou.GIF;
+        {
+            return _nicoDou.GIF;
+        }
     }
 }

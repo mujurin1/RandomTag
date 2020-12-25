@@ -3,6 +3,7 @@ using RandomTag.Core.Mvvm;
 using RandomTag.Services.Interfaces;
 using Reactive.Bindings;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace RandomTag.Modules.ModuleName.ViewModels
@@ -21,7 +22,20 @@ namespace RandomTag.Modules.ModuleName.ViewModels
         public ViewAViewModel(IRegionManager regionManager, IGifService gifService) :
             base(regionManager)
         {
-            _img = gifService.GetGif();
+            var image = gifService.GetGif();
+            if (image.IsDownloading)
+            {
+                IMG = new(new(@"C:\Users\てつよい\Desktop\画像\d46f8c0068993ee3464eb1b60ea69b70.jpg"));
+                image.DownloadCompleted += (o, e) =>
+                {
+                    Debug.WriteLine("COMPLETED!");
+                    IMG = image;
+                };
+            }
+            else
+            {
+                IMG = image;
+            }
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)

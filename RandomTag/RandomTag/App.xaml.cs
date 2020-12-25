@@ -4,6 +4,7 @@ using RandomTag.Modules.ModuleName;
 using RandomTag.Services;
 using RandomTag.Services.Interfaces;
 using RandomTag.Views;
+using System.Net.Http;
 using System.Windows;
 
 namespace RandomTag
@@ -20,6 +21,7 @@ namespace RandomTag
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            //containerRegistry.RegisterSingleton<HttpClient>();
             containerRegistry.RegisterSingleton<IGifService, GifService>();
         }
 
