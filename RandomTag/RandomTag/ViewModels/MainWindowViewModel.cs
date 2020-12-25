@@ -6,7 +6,7 @@ namespace RandomTag.ViewModels
     public class MainWindowViewModel : BindableBase
     {
         public ReactiveProperty<string> Title { get; }
-            = new("Prism Application");
+            = new("ヒダリウエApp");
 
         public MainWindowViewModel()
         {
